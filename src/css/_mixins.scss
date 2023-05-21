@@ -1,0 +1,47 @@
+@mixin header-container() {
+  position: relative;
+  width: 100%;
+  height: 84px;
+}
+
+@mixin refocusLogo() {
+  position: relative;
+  display: flex;
+  top: 29px;
+}
+@mixin menu-font-props() {
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+@mixin yellow-hover-effect() {
+  text-decoration-line: underline;
+  text-underline-offset: 4px;
+  color: #dcf10d;
+}
+@mixin signup-login() {
+  white-space: nowrap;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  color: #9d9db5;
+  justify-content: center;
+  width: 86px;
+  height: 48px;
+}
+@mixin button-login() {
+  box-sizing: border-box;
+  width: 86px;
+  height: 48px;
+  border: 1px solid #0266ff;
+  border-radius: 40px;
+  color: #0266ff;
+}
+@mixin image-properties() {
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 6px 6px 0px 0px;
+  width: 100%;
+  height: 165px;
+}
