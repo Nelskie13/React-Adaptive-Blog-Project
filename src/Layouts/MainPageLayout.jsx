@@ -1,5 +1,4 @@
 import { NavLink, Outlet } from "react-router-dom";
-import Footer from "../components/Footer";
 import Add from "../assets/Add.svg";
 
 function MainPageLayout() {
@@ -28,7 +27,6 @@ function MainPageLayout() {
       <main>
         <Outlet />
       </main>
-      <Footer />
     </div>
   );
 }

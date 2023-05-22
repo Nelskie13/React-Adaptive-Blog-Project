@@ -8,16 +8,18 @@ import NewPostForm from "./components/NewPostForm";
 import MainPageLayout from "./Layouts/MainPageLayout";
 import FavoriteList from "./components/FavoriteList";
 import { PostsContext } from "./components/PostsContext";
-import PostLayout from "./Layouts/PostLayout";
+import Footer from "./components/Footer";
 
 import {
   Route,
+  Outlet,
   RouterProvider,
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
 import Header from "./components/Header";
 import PostDetails from "./components/PostDetails";
+import BlogReturn from "./Layouts/BlogReturn";
 
 function App() {
   // Initialize the posts and favoritePosts state using useState
@@ -29,13 +31,12 @@ function App() {
       <Route path="/" element={<Header />}>
         <Route path="/" element={<MainPageLayout />}>
           <Route path="Allpost" element={<PostsList />} />
-
-          <Route path="/" element={<PostLayout />}>
-            <Route path="/Allpost/:id" element={<PostDetails />} />
-          </Route>
-
           <Route path="Favorite" element={<FavoriteList />} />
           <Route path="Addpost" element={<NewPostForm />} />
+        </Route>
+        <Route path="/" element={<Outlet />}>
+          <Route path="/Allpost/:id" element={<PostDetails />} />
+          <Route path="/Allpost" element={<BlogReturn />} />
         </Route>
       </Route>
     )
@@ -48,6 +49,7 @@ function App() {
       value={{ posts, setPosts, favoritePosts, setFavoritePosts }}
     >
       <RouterProvider router={router} />
+      <Footer />
     </PostsContext.Provider>
   );
 }
