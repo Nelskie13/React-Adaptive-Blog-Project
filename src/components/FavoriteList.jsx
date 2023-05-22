@@ -1,6 +1,6 @@
 import { useContext, useEffect, useMemo, useState } from "react";
-import { Post } from "./PostsList";
-import { PostsContext } from "../App";
+import { Post } from "./Post";
+import { PostsContext } from "./PostsContext";
 
 function FavoriteList() {
   const { posts, favoritePosts, setFavoritePosts } = useContext(PostsContext);
