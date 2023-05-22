@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import { PostsContext } from "../components/PostsContext";
-import { Post } from "./Post";
+import Post from "./Post";
 
 // Export PostsList component
 export const PostsList = () => {

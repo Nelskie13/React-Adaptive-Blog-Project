@@ -4,6 +4,7 @@ import commentLogo from "../assets/comment.svg";
 import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { PostsContext } from "../components/PostsContext";
+import Images from "./Images";
 
 function PostDetails() {
   const { posts } = useContext(PostsContext);
@@ -13,7 +14,7 @@ function PostDetails() {
   return (
     <div className="cards-container">
       <div className="Cards-details">
-        <img className="Cards-image" src={selectedPost.images} alt="image" />
+        <Images id={selectedPost.id} />
         <div className="Text-Props">
           <p className="Cards-title">{selectedPost.title}</p>
           <p className="Cards-text">{selectedPost.text}</p>

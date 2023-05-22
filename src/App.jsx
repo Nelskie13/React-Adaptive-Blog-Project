@@ -30,7 +30,7 @@ function App() {
         <Route path="/" element={<MainPageLayout />}>
           <Route path="Allpost" element={<PostsList />} />
 
-          <Route path="Allpost" element={<PostLayout />}>
+          <Route path="/" element={<PostLayout />}>
             <Route path="/Allpost/:id" element={<PostDetails />} />
           </Route>
 
