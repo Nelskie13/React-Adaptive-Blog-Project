@@ -1,10 +1,11 @@
-import { useEffect, useMemo, useState } from "react";
-import postsData from "../posts.json";
+import { useContext, useEffect, useMemo, useState } from "react";
 import { Post } from "./PostsList";
+import { PostsContext } from "../App";
 
-function FavoriteList({ favoritePosts, setFavoritePosts }) {
+function FavoriteList() {
+  const { posts, favoritePosts, setFavoritePosts } = useContext(PostsContext);
   // Filter the postsData based on the favoritePosts array
-  let favoritePost = postsData.filter((post) => {
+  let favoritePost = posts.filter((post) => {
     return favoritePosts.includes(post.id);
   });
 
@@ -26,7 +27,7 @@ function FavoriteList({ favoritePosts, setFavoritePosts }) {
 
   useMemo(() => {
     // Update the posting state whenever the favoritePosts array changes
-    favoritePost = postsData.filter((post) => {
+    favoritePost = posts.filter((post) => {
       return favoritePosts.includes(post.id);
     });
     setPosting(favoritePost);
@@ -47,6 +48,7 @@ function FavoriteList({ favoritePosts, setFavoritePosts }) {
             likes={post.likes}
             isLiked={post.isLiked}
             favoritePosts={post.favoritePosts}
+            setFavoritePosts={post.setFavoritePosts}
           />
         ))
       ) : (

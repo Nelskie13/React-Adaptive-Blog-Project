@@ -22,10 +22,12 @@ import picture20 from "../assets/Pictures/Image-19.jpg";
 import commentLogo from "../assets/comment.svg";
 import heartLogo from "../assets/heart.svg";
 import heartSolid from "../assets/heartSolid.svg";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { PostsContext } from "../App";
 
 // Export PostsList component
-export const PostsList = ({ posts, favoritePosts, setFavoritePosts }) => {
+export const PostsList = () => {
+  const { posts, favoritePosts, setFavoritePosts } = useContext(PostsContext);
   return (
     <div className="posts-container">
       {/* Map through posts array and render Post component */}

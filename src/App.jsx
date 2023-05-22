@@ -1,3 +1,4 @@
+import React from "react";
 import "../src/css/App.css";
 import "./css/main.css";
 import { useState } from "react";
@@ -15,6 +16,8 @@ import {
 } from "react-router-dom";
 import Header from "./components/Header";
 
+export const PostsContext = React.createContext();
+
 function App() {
   const [posts, setPosts] = useState(postsData);
   const [favoritePosts, setFavoritePosts] = useState([]);
@@ -23,32 +26,21 @@ function App() {
     createRoutesFromElements(
       <Route path="/" element={<Header />}>
         <Route path="/" element={<MainPageLayout />}>
-          <Route
-            path="Allpost"
-            element={
-              <PostsList
-                posts={postsData}
-                favoritePosts={favoritePosts}
-                setFavoritePosts={setFavoritePosts}
-              />
-            }
-          />
-          <Route
-            path="/Favorite"
-            element={
-              <FavoriteList
-                favoritePosts={favoritePosts}
-                setFavoritePosts={setFavoritePosts}
-              />
-            }
-          />
+          <Route path="Allpost" element={<PostsList />} />
+          <Route path="/Favorite" element={<FavoriteList />} />
           <Route path="Addpost" element={<NewPostForm />} />
         </Route>
       </Route>
     )
   );
   // Render the RouterProvider component with the router configuration
-  return <RouterProvider router={router} />;
+  return (
+    <PostsContext.Provider
+      value={{ posts, setPosts, favoritePosts, setFavoritePosts }}
+    >
+      <RouterProvider router={router} />
+    </PostsContext.Provider>
+  );
 }
 
 export default App;
