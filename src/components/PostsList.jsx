@@ -1,3 +1,4 @@
+import React from "react";
 import { useContext } from "react";
 import { PostsContext } from "../components/PostsContext";
 import { Post } from "./Post";

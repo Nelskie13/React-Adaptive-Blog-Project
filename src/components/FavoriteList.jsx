@@ -1,3 +1,4 @@
+import React from "react";
 import { useContext, useEffect, useMemo, useState } from "react";
 import { Post } from "./Post";
 import { PostsContext } from "./PostsContext";
