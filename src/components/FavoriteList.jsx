@@ -1,8 +1,9 @@
-import { useEffect, useMemo, useState } from "react";
-// import postsData from "../posts.json";
+import { useContext, useEffect, useMemo, useState } from "react";
 import { Post } from "./PostsList";
+import { PostsContext } from "../App";
 
-function FavoriteList({ posts, favoritePosts, setFavoritePosts }) {
+function FavoriteList() {
+  const { posts, favoritePosts, setFavoritePosts } = useContext(PostsContext);
   // Filter the postsData based on the favoritePosts array
   let favoritePost = posts.filter((post) => {
     return favoritePosts.includes(post.id);
