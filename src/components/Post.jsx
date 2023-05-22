@@ -24,8 +24,9 @@ import commentLogo from "../assets/comment.svg";
 import heartLogo from "../assets/heart.svg";
 import heartSolid from "../assets/heartSolid.svg";
 import { useMemo, useState } from "react";
+import { NavLink } from "react-router-dom";
 
-const images = {
+export const images = {
   1: picture1,
   2: picture2,
   3: picture3,
@@ -102,11 +103,13 @@ export const Post = ({
             <p className="Cards-date">{date} </p>
             <p className="Cards-dot"> • </p>
             <p className="Cards-author"> {author}</p>
-            <div className="comment">
-              <button className="commentBtn">
-                <img src={commentLogo} alt="comment-logo" />
-              </button>
-            </div>
+            <NavLink to={`/Allpost/${id}`} key={id}>
+              <div className="comment">
+                <button className="commentBtn">
+                  <img src={commentLogo} alt="comment-logo" />
+                </button>
+              </div>
+            </NavLink>
             <p className="Cards-comment">{comment}k</p>
             <div className="heart">
               <button className="heartBtn" onClick={toggleLike}>
