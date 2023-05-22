@@ -27,7 +27,7 @@ function App() {
             path="Allpost"
             element={
               <PostsList
-                posts={postsData}
+                posts={posts}
                 favoritePosts={favoritePosts}
                 setFavoritePosts={setFavoritePosts}
               />
@@ -39,6 +39,7 @@ function App() {
               <FavoriteList
                 favoritePosts={favoritePosts}
                 setFavoritePosts={setFavoritePosts}
+                posts={posts}
               />
             }
           />
