@@ -43,9 +43,9 @@ const images = {
   20: picture20,
 };
 
-function Images({ id }) {
+function Images({ id, className }) {
   const image = useMemo(() => images[id], [id]);
-  return <img className="Cards-image" src={image} alt="image" />;
+  return <img className={`Cards-image ${className}`} src={image} alt="image" />;
 }
 
 export default Images;

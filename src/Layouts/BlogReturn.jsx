@@ -5,8 +5,8 @@ import arrow from "../assets/arrow.svg";
 function BlogReturn() {
   return (
     <div className="BlogReturn">
-      <NavLink to="/Allpost" className="blogReturn">
-        <div BlogReturn-container>
+      <NavLink className="Blog-Navlink" to="/Allpost">
+        <div className="BlogReturn-container">
           <img src={arrow} />
           <p className="blogReturnText">Blog</p>
         </div>

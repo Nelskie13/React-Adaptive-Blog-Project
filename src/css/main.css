@@ -313,6 +313,99 @@
   background: #d7f8ff;
 }
 
+.Cards-PostDetails {
+  margin-top: 60px;
+}
+
+.PostDetails-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.PostDetail-img-container {
+  margin: 0px 30px 0px 30px;
+}
+.PostDetail-img-container .PostDetail-img {
+  position: relative;
+  border-radius: 10px;
+  height: 320px;
+  top: 60px;
+}
+
+.likes-author-PostDetails {
+  display: flex;
+}
+
+.author-date-container {
+  display: flex;
+  gap: 20px;
+}
+
+.BlogReturn-container {
+  display: flex;
+  gap: 10px;
+  font-family: "Inter";
+  color: #0266ff;
+}
+
+.Blog-Navlink {
+  text-decoration: none;
+}
+
+.Cards-PostDetails {
+  width: 590px;
+}
+.Cards-PostDetails .PostDetails-title {
+  font-family: Arial;
+  font-weight: 700;
+  font-size: 36px;
+}
+.Cards-PostDetails .PostDetails-author,
+.Cards-PostDetails .PostDetails-date {
+  font-family: "Inter";
+  font-size: 12px;
+  color: #9d9db5;
+}
+.Cards-PostDetails .PostDetails-text {
+  font-family: "Inter";
+  font-size: 16px;
+}
+.Cards-PostDetails .LeaveComment {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 24px;
+}
+.Cards-PostDetails .textarea {
+  width: 590px;
+  height: 100px;
+  border: 1px solid #c0bfcf;
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 20px;
+  font-family: "Inter";
+  font-size: 16px;
+}
+.Cards-PostDetails .sendBtn {
+  font-family: "Inter";
+  font-size: 16px;
+  color: #ffffff;
+  background: #c0bfcf;
+  border-radius: 6px;
+  width: 210px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Cards-PostDetails .line {
+  border: 1px solid #ebeff8;
+  margin: 50px 0px 50px 0px;
+}
+
 @media only screen and (max-width: 320px) {
   .navbar-container .menu-container {
     display: none;

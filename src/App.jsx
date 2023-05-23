@@ -9,6 +9,9 @@ import MainPageLayout from "./Layouts/MainPageLayout";
 import FavoriteList from "./components/FavoriteList";
 import { PostsContext } from "./components/PostsContext";
 import Footer from "./components/Footer";
+import Header from "./components/Header";
+import PostDetails from "./components/PostDetails";
+import BlogReturn from "./Layouts/BlogReturn";
 
 import {
   Route,
@@ -17,9 +20,6 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import Header from "./components/Header";
-import PostDetails from "./components/PostDetails";
-import BlogReturn from "./Layouts/BlogReturn";
 
 function App() {
   // Initialize the posts and favoritePosts state using useState
