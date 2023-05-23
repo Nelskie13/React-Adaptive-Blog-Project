@@ -31,7 +31,7 @@ function PostDetails() {
               <button className="commentBtn">
                 <img src={commentLogo} alt="comment-logo" />
               </button>
-              <p className="Cards-comment">{selectedPost.comment}k</p>
+              <p className="Cards-comment">{selectedPost.comments.length}</p>
             </div>
 
             <div className="PostDetails-heart">
@@ -49,9 +49,9 @@ function PostDetails() {
           <p className="LeaveComment">Leave a comment:</p>
 
           <div className="Comment-container">
-            <input className="textarea" type="text" placeholder="Comments..." />
+            <textarea className="textarea" placeholder="Comment..."></textarea>
             <div className="sendContainer">
-              <p className="sendBtn">Send</p>
+              <button className="sendBtn">Send</button>
             </div>
           </div>
           <p className="line"></p>
@@ -86,12 +86,10 @@ function PostDetails() {
           ))}
         </div>
         <div className="showMore-container">
-          <p className="showMore">Show more</p>
+          <button className="showMore">Show more</button>
         </div>
       </div>
-      <div className="PostDetail-img-container">
-        <Images className="PostDetail-img" id={selectedPost.id} />
-      </div>
+      <Images className="PostDetail-img" id={selectedPost.id} />
     </div>
   );
 }

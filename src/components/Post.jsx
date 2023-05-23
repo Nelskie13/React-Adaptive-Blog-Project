@@ -1,11 +1,12 @@
 // Import images
-import React from "react";
+import React, { useContext } from "react";
 import commentLogo from "../assets/comment.svg";
 import heartLogo from "../assets/heart.svg";
 import heartSolid from "../assets/heartSolid.svg";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Images from "./Images";
+import { PostsContext } from "../components/PostsContext";
 
 const Post = ({
   id,
@@ -13,14 +14,15 @@ const Post = ({
   text,
   date,
   author,
-  comment,
   likes,
   isLiked,
   favoritePosts,
   setFavoritePosts,
 }) => {
+  const { posts } = useContext(PostsContext);
   const [isLike, setIsLiked] = useState(isLiked);
   const [postLikes, setPostLikes] = useState(likes);
+  const selectedPost = posts.find((post) => post.id === parseInt(id));
 
   // Function to handle favoriting/unfavoriting a post
   const favoriteHandler = () => {
@@ -65,7 +67,7 @@ const Post = ({
                 </button>
               </div>
             </NavLink>
-            <p className="Cards-comment">{comment}k</p>
+            <p className="Cards-comment">{selectedPost.comments.length}</p>
             <div className="heart">
               <button className="heartBtn" onClick={toggleLike}>
                 {isLike ? (

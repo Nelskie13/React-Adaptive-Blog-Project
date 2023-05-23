@@ -268,14 +268,12 @@
   width: 100%;
   justify-content: center;
 }
-.PostDetail-img-container {
-  margin: 0px 30px 0px 30px;
-  .PostDetail-img {
-    position: relative;
-    border-radius: 10px;
-    height: 320px;
-    top: 60px;
-  }
+.PostDetail-img {
+  position: relative;
+  border-radius: 10px;
+  height: 320px;
+  top: 60px;
+  left: 40px;
 }
 .PostDetails-comment,
 .PostDetails-heart {
@@ -289,6 +287,7 @@
   font-size: 12px;
   margin: 30px 0px 30px 0px;
   gap: 20px;
+  color: #9d9db5;
 }
 .author-date-container {
   display: flex;
@@ -349,7 +348,7 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      padding: 0px 20px;
+      padding: 20px 20px;
       font-family: "Inter";
       font-size: 16px;
     }
@@ -369,6 +368,10 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      border: none;
+      &:hover {
+        background: #0266ff;
+      }
     }
   }
 }
@@ -425,6 +428,7 @@
   display: flex;
 }
 .showMore {
+  border: none;
   font-family: "Inter";
   font-size: 16px;
   color: #0266ff;
@@ -439,7 +443,12 @@
   border-radius: 40px;
   width: 142px;
   height: 50px;
+  background-color: #ffffff;
   margin: 40px 0px 40px 0px;
+  &:hover {
+    background-color: #0266ff;
+    color: #ffffff;
+  }
 }
 ///////Media query for mobile//////////////////////
 @media only screen and (max-width: 320px) {
@@ -527,6 +536,51 @@
     gap: 40px;
     z-index: 100;
     margin-top: 84px;
+  }
+  .PostDetails-container {
+    position: relative;
+    width: 100%;
+    .PostDetail-img {
+      top: 120px;
+      right: 300px;
+      height: 165px;
+      width: 300px;
+    }
+    .Cards-PostDetails {
+      position: relative;
+      margin: 0px 10px 50px 10px;
+      width: 100%;
+      height: 1170px;
+      top: 220px;
+      .PostDetails-title {
+        font-size: 28px;
+        width: 246px;
+        height: 72px;
+      }
+      .textarea {
+        width: 300px;
+        height: 150px;
+      }
+      .PostDetails-author,
+      .PostDetails-date {
+        font-size: 9px;
+      }
+      .PostDetails-text {
+        font-size: 14px;
+      }
+      .LeaveComment {
+        font-size: 18px;
+      }
+      .sendBtn {
+        width: 300px;
+      }
+      .Comments {
+        font-size: 18px;
+      }
+      .showMore {
+        height: 40px;
+      }
+    }
   }
 }
 ///////////////////////////////////////////////////

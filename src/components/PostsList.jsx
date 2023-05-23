@@ -17,7 +17,6 @@ export const PostsList = () => {
           text={post.text}
           author={post.author}
           date={post.date}
-          comment={post.comment}
           likes={post.likes}
           isLiked={post.isLiked}
           favoritePosts={favoritePosts}
