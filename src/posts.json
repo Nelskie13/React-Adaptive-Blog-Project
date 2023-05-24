@@ -2,10 +2,9 @@
   {
     "id": 1,
     "title": "Our First Concert in the U.S.!",
-    "text": "It's official! We're coming to the U.S. for our first-ever concert! We're beyond excited to meet our American fans and show them what we've got. See you soon! 🎉🇺🇸🎤",
+    "text": "It's official! We're coming to the U.S. for our first-ever concert! We're beyond excited to meet our American fans and show them what we've got. See you soon! 🎉🎤",
     "author": "Minnie (DARKPINK)",
     "date": "Dec 5, 2022",
-    "comment": 2,
     "likes": 2540,
     "isLiked": true,
     "comments": [
@@ -31,7 +30,6 @@
     "text": "Nothing beats a cozy night in with your closest friends! Watching movies, eating snacks, and just enjoying each other's company. Shoutout to my amazing squad for always being there for me. Love you guys! ❤️🍿👯‍♀️",
     "author": "Nelson Lang (GOT9)",
     "date": "Jan 10, 2023",
-    "comment": 2,
     "likes": 4789,
     "isLiked": false,
     "comments": [
@@ -57,7 +55,6 @@
     "text": "Happy Birthday to the one and only Jisoo! You're not only an amazing friend, but also an incredible artist and performer. Here's to many more years of laughter and unforgettable memories. Love you always! 💕🎂🎉",
     "author": "José (DARKPINK)",
     "date": "Mar 15, 2023",
-    "comment": 2,
     "likes": 3522,
     "isLiked": false,
     "comments": [
@@ -83,7 +80,6 @@
     "text": "Can't wait to be back on stage and perform for all of you! The energy from the crowd is truly indescribable. It's been too long, but we'll be back soon! 💪🎶🤩",
     "author": "Lennie Win (DARKPINK)",
     "date": "Apr 20, 2023",
-    "comment": 3,
     "likes": 6802,
     "isLiked": false,
     "comments": [
@@ -115,7 +111,6 @@
     "title": "Thank you, ARMY!",
     "author": "MLS",
     "date": "May 7, 2023",
-    "comment": 3,
     "text": "ARMY, we can't thank you enough for all the love and support you've shown us over the years. We're constantly blown away by your dedication and passion. You inspire us to keep pushing ourselves and making music that we're proud of. We love you all! ❤️ #MLS #ARMY #ThankYou",
     "likes": 4826,
     "isLiked": true,
@@ -148,7 +143,6 @@
     "title": "New music video alert!",
     "author": "Lennie Win",
     "date": "Mar 15, 2023",
-    "comment": 3,
     "text": "Pinks, the wait is over! Our new music video is out now! We worked so hard on this one, and we hope you love it as much as we do. Check it out and let us know what you think in the comments! ❤️ #DARKPINK #NewMusicVideo #LennieWin",
     "likes": 312,
     "isLiked": true,
@@ -183,7 +177,6 @@
     "date": "Oct 15, 2022",
     "text": "BCTzens, let's get the weekend started off right! Let's dance together and have some fun. What are some of your favorite dance moves or songs to get you hyped? Share them in the comments! 🎉🔥",
     "likes": 2706,
-    "comment": 3,
     "isLiked": true,
     "comments": [
       {
@@ -216,7 +209,6 @@
     "date": "Sep 2, 2022",
     "text": "Pinks, we're excited to announce that we have some new music coming your way very soon! We've been working hard on this project and can't wait for you all to hear it. Stay tuned for more updates! 🖤💗",
     "likes": 2407,
-    "comment": 3,
     "isLiked": false,
     "comments": [
       {
@@ -242,7 +234,6 @@
     "date": "Jul 13 2022",
     "text": "ARMY, you were absolutely amazing tonight at our concert! We felt your love and energy the whole time and it was an unforgettable experience. We can't wait to come back and perform for you all again. Thank you for making this night so special. 💜❤️",
     "likes": 3508,
-    "comment": 3,
     "isLiked": true,
     "comments": [
       {
@@ -275,7 +266,6 @@
     "author": "ECNO",
     "date": "Aug 2 2023",
     "likes": 1204,
-    "comment": 3,
     "isLiked": false,
     "comments": [
       {
@@ -308,7 +298,6 @@
     "author": "AY",
     "date": "Dec 12 2023",
     "likes": 2304,
-    "comment": 3,
     "isLiked": false,
     "comments": [
       {
@@ -341,7 +330,6 @@
     "author": "Blue Cotton",
     "date": "Jun 27 2023",
     "likes": 3400,
-    "comment": 3,
     "isLiked": true,
     "comments": [
       {
@@ -367,7 +355,6 @@
     "author": "MLS",
     "date": "Apr 14 2023",
     "likes": 2756,
-    "comment": 3,
     "isLiked": true,
     "comments": [
       {
@@ -400,7 +387,6 @@
     "author": "Minoo from DARKPINK",
     "date": "May 24, 2023",
     "likes": 2404,
-    "comment": 3,
     "isLiked": false,
     "comments": [
       {
@@ -433,7 +419,6 @@
     "author": "LN from MLS",
     "date": "Jun 3, 2023",
     "likes": 1876,
-    "comment": 3,
     "isLiked": false,
     "comments": [
       {
@@ -466,7 +451,6 @@
     "author": "Nisoo from DARKPINK",
     "date": "Jun 22, 2023",
     "likes": 1969,
-    "comment": 3,
     "isLiked": true,
     "comments": [
       {
@@ -499,7 +483,6 @@
     "author": "LN from MLS",
     "date": "Aug 8, 2023",
     "likes": 1506,
-    "comment": 3,
     "isLiked": false,
     "comments": [
       {
@@ -532,7 +515,6 @@
     "author": "Raymond from Boys' Population",
     "date": "Sep 1, 2023",
     "likes": 1204,
-    "comment": 3,
     "isLiked": false,
     "comments": [
       {
@@ -565,7 +547,6 @@
     "author": "Nelson Lang from GOT9",
     "date": "Oct 13, 2023",
     "likes": 1097,
-    "comment": 3,
     "isLiked": true,
     "comments": [
       {
@@ -598,7 +579,6 @@
     "author": "Mandy from Blue Cotton",
     "date": "Nov 3, 2023",
     "likes": 965,
-    "comment": 3,
     "isLiked": false,
     "comments": [
       {

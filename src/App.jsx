@@ -32,11 +32,13 @@ function App() {
         <Route path="/" element={<MainPageLayout />}>
           <Route path="Allpost" element={<PostsList />} />
           <Route path="Favorite" element={<FavoriteList />} />
-          <Route path="Addpost" element={<NewPostForm />} />
         </Route>
         <Route path="/" element={<Outlet />}>
           <Route path="/Allpost/:id" element={<PostDetails />} />
           <Route path="/Allpost" element={<BlogReturn />} />
+        </Route>
+        <Route path="/" element={<Outlet />}>
+          <Route path="Addpost" element={<NewPostForm />} />
         </Route>
       </Route>
     )

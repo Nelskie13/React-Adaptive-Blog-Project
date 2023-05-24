@@ -80,7 +80,6 @@ function PostDetails() {
                   </div>
                   <p className="comment-likes">{comment.likes}</p>
                 </div>
-                <p className="Comment-line"></p>
               </div>
             </div>
           ))}
@@ -89,7 +88,9 @@ function PostDetails() {
           <button className="showMore">Show more</button>
         </div>
       </div>
-      <Images className="PostDetail-img" id={selectedPost.id} />
+      <div className="PostImage-container">
+        <Images className="PostDetail-img" id={selectedPost.id} />
+      </div>
     </div>
   );
 }
