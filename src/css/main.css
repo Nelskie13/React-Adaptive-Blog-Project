@@ -178,14 +178,14 @@
   color: #625f87;
   margin-bottom: 10px;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 .Cards-details .likes-author-container {
   display: flex;
-  font-family: "Inter";
   align-items: center;
+  font-family: "Inter";
   height: 30px;
   font-style: normal;
   font-weight: 400;
@@ -230,10 +230,10 @@
 .favorite,
 .addpost {
   display: flex;
-  width: 102px;
-  height: 50px;
   align-items: center;
   justify-content: center;
+  width: 102px;
+  height: 50px;
   margin: 5px;
 }
 
@@ -289,8 +289,8 @@
 .comment,
 .heart {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   margin-top: 3px;
 }
 
@@ -319,8 +319,8 @@
 
 .PostDetails-container {
   display: flex;
-  width: 100%;
   justify-content: center;
+  width: 100%;
 }
 
 .PostDetail-img {
@@ -411,12 +411,12 @@
   border: 1px solid #c0bfcf;
   border-radius: 6px;
   box-sizing: border-box;
-  display: flex;
   flex-direction: row;
-  align-items: center;
   padding: 20px 20px;
   font-family: "Inter";
   font-size: 16px;
+  display: flex;
+  align-items: center;
 }
 .Cards-PostDetails .Comment-container .sendContainer {
   display: flex;
@@ -431,10 +431,10 @@
   border-radius: 6px;
   width: 210px;
   height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .Cards-PostDetails .Comment-container .sendBtn:hover {
   background: #0266ff;
@@ -512,18 +512,16 @@
   font-size: 16px;
   color: #0266ff;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   padding: 13px 20px;
-  gap: 5px;
   border: 1px solid #0266ff;
   border-radius: 40px;
   width: 142px;
   height: 50px;
   background-color: #ffffff;
   margin: 40px 0px 40px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .showMore:hover {
   background-color: #0266ff;
@@ -591,8 +589,8 @@
 
 .NewsPostForm {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   height: 780px;
 }
 
@@ -760,11 +758,11 @@
     position: absolute;
     height: 165px;
     bottom: 500px;
+    left: 10px;
   }
   .ImageUploader-container .image-uploader {
     height: 165px;
     width: 280px;
-    right: 40px;
   }
   .NewsPostForm {
     display: flex;

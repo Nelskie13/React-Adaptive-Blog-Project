@@ -45,3 +45,307 @@
   width: 100%;
   height: 165px;
 }
+@mixin cropped-displayed() {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+@mixin flex-align-justify-center() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin flex-align-center() {
+  display: flex;
+  align-items: center;
+}
+@mixin flex-justify-center() {
+  display: flex;
+  justify-content: center;
+}
+@mixin allpost-favorite-props() {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 16px;
+  box-sizing: border-box;
+  display: flex;
+  gap: 5px;
+  width: 102px;
+  height: 50px;
+  color: #9d9db5;
+  border: 1px solid #9d9db5;
+  border-radius: 40px;
+  padding: 16px 10px;
+  text-decoration: none;
+}
+@mixin addpost-props() {
+  display: flex;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 16px;
+  box-sizing: border-box;
+  padding: 13px 20px;
+  width: 136px;
+  border: 1px solid #9d9db5;
+  color: #9d9db5;
+  border-radius: 10px;
+  text-decoration: none;
+}
+@mixin textarea-props() {
+  width: 590px;
+  height: 100px;
+  border: 1px solid #c0bfcf;
+  border-radius: 6px;
+  box-sizing: border-box;
+  flex-direction: row;
+  padding: 20px 20px;
+  font-family: "Inter";
+  font-size: 16px;
+}
+@mixin sendBtn-props() {
+  font-family: "Inter";
+  font-size: 16px;
+  color: #ffffff;
+  background: #c0bfcf;
+  border-radius: 6px;
+  width: 210px;
+  height: 50px;
+  border: none;
+}
+@mixin showmore-props() {
+  border: none;
+  font-family: "Inter";
+  font-size: 16px;
+  color: #0266ff;
+  box-sizing: border-box;
+  padding: 13px 20px;
+  border: 1px solid #0266ff;
+  border-radius: 40px;
+  width: 142px;
+  height: 50px;
+  background-color: #ffffff;
+  margin: 40px 0px 40px 0px;
+}
+@mixin addtitle-textarea-props() {
+  width: 590px;
+  height: 100px;
+  border-radius: 6px;
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 36px;
+  border: 1px solid #c0bfcf;
+  padding: 16px 20px;
+  box-sizing: border-box;
+}
+@mixin addtext-textarea-props() {
+  width: 590px;
+  height: 200px;
+  border: 1px solid #c0bfcf;
+  border-radius: 6px;
+  padding: 16px 20px;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+@mixin postbtn-props() {
+  border-radius: 6px;
+  width: 140px;
+  height: 50px;
+  padding: 13px 36px;
+  background: #c0bfcf;
+  border: none;
+  font-family: "Inter";
+  font-size: 16px;
+  color: #ffffff;
+}
+@mixin media-query-mobile-props() {
+  .navbar-container {
+    position: relative;
+    .menu-container {
+      display: none;
+    }
+    .hamburger {
+      display: block;
+      position: relative;
+      left: 170px;
+      top: 15px;
+    }
+    .logo {
+      position: relative;
+      top: 15px;
+    }
+  }
+  .footer-container {
+    position: relative;
+    flex-direction: column;
+    height: 213px;
+    .socialogo {
+      margin: 10px 15px 0px 15px;
+      width: 90%;
+      height: 30px;
+    }
+    .follow-us,
+    .legality {
+      color: #ffffff;
+      font-family: "Inter";
+      font-size: 12px;
+      width: 100%;
+      margin-top: 20px;
+    }
+    .follow {
+      margin: 20px 0px 0px 20px;
+    }
+    .legal {
+      justify-content: left;
+      margin: 20px 0px 0px 20px;
+    }
+  }
+  .card-container {
+    display: flex;
+    background-color: #ffffff;
+  }
+  .posts-container {
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(1, 300px);
+    gap: 40px;
+    justify-content: center;
+    margin: 185px 10px 0px 10px;
+  }
+  .addpost {
+    display: none;
+  }
+  .Add-logo {
+    display: block;
+  }
+  .adds-logo {
+    width: 40px;
+    position: relative;
+    top: 12px;
+  }
+  .allpost,
+  .favorite {
+    position: relative;
+    top: 12px;
+    font-size: 14px;
+    box-sizing: border-box;
+    width: 97px;
+    height: 40px;
+  }
+  .navbar-container {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+  }
+  .MainPageSelection {
+    background-color: #ffffff;
+    height: 100px;
+    position: fixed;
+    top: 0px;
+    gap: 40px;
+    z-index: 100;
+    margin-top: 84px;
+  }
+  .PostImage-container {
+    position: absolute;
+    height: 165px;
+    width: 300px;
+    top: 70px;
+    right: 50px;
+    .PostDetail-img {
+      height: 165px;
+      width: 300px;
+    }
+  }
+  .PostDetails-container {
+    margin-top: 320px;
+    .Cards-PostDetails {
+      height: fit-content;
+      position: relative;
+      margin: 0px 10px 0px 10px;
+      .PostDetails-title {
+        font-size: 28px;
+        height: 72px;
+        margin-top: 10px;
+      }
+      .textarea {
+        width: 300px;
+        height: 150px;
+      }
+      .PostDetails-author,
+      .PostDetails-date {
+        font-size: 9px;
+      }
+      .PostDetails-text {
+        font-size: 14px;
+      }
+      .LeaveComment {
+        font-size: 18px;
+      }
+      .sendBtn {
+        width: 300px;
+      }
+      .Comments {
+        font-size: 18px;
+      }
+      .showMore {
+        height: 40px;
+      }
+    }
+  }
+  .ImageUploader-container {
+    position: absolute;
+    height: 165px;
+    bottom: 500px;
+    left: 10px;
+    .image-uploader {
+      height: 165px;
+      width: 280px;
+    }
+  }
+
+  .NewsPostForm {
+    display: flex;
+    align-items: end;
+    width: 320px;
+    height: 920px;
+    .NewPost-container {
+      .NewPost-title {
+        font-size: 28px;
+        margin: 0px;
+      }
+      .addtitle,
+      .addText {
+        font-size: 18px;
+      }
+      .addTitle-textarea {
+        width: 300px;
+        height: 100px;
+        font-size: 28px;
+      }
+      .AddText-textarea {
+        width: 300px;
+        height: 200px;
+        font-size: 14px;
+      }
+      .PostBtn {
+        width: 300px;
+      }
+    }
+    .BlogReturn {
+      position: relative;
+      bottom: 230px;
+    }
+    .NewPost-title {
+      position: relative;
+      bottom: 220px;
+    }
+    .image-button {
+      font-size: 14px;
+      font-family: "Inter";
+      padding: 10px 20px 10px 20px;
+    }
+  }
+}
