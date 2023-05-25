@@ -126,7 +126,7 @@
     line-height: 140%;
     color: #625f87;
     margin-bottom: 10px;
-    @include mixins.cropped-displayed();
+    @include mixins.cropped-displayed-2lines();
   }
   .likes-author-container {
     @include mixins.flex-align-center();

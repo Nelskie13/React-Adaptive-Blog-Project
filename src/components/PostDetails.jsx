@@ -2,16 +2,66 @@ import commentLogo from "../assets/comment.svg";
 import jenny from "../assets/jenny.svg";
 import unknownPic from "../assets/unknownPic.svg";
 import heartSolid from "../assets/heartSolid.svg";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import { PostsContext } from "../components/PostsContext";
 import BlogReturn from "../Layouts/BlogReturn";
 import Images from "./Images";
 
 function PostDetails() {
-  const { posts } = useContext(PostsContext);
+  const { posts, setPosts } = useContext(PostsContext);
   const { id } = useParams();
   const selectedPost = posts.find((post) => post.id === parseInt(id));
+  const [newComment, setNewComment] = useState("");
+  const [showAllComments, setShowAllComments] = useState(false);
+
+  // Function to handle adding a new comment to a post
+  const addComment = () => {
+    const currentDate = new Date();
+    const formattedDate = currentDate.toLocaleDateString("en-US", {
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+    });
+
+    const updatedPosts = posts.map((post) => {
+      if (post.id === parseInt(id)) {
+        const updatedComments = [
+          ...post.comments,
+          {
+            author: selectedPost.author,
+            text: newComment,
+            date: formattedDate,
+          },
+        ];
+        return { ...post, comments: updatedComments };
+      }
+      return post;
+    });
+
+    setPosts(updatedPosts);
+    setNewComment("");
+  };
+
+  // Function to handle input change in the comment textarea
+  const handleCommentChange = (event) => {
+    setNewComment(event.target.value);
+  };
+
+  // Function to handle "Show more" button click
+  const handleShowMore = () => {
+    setShowAllComments(true);
+  };
+
+  // Function to handle "Show less" button click
+  const handleShowLess = () => {
+    setShowAllComments(false);
+  };
+
+  // Determine the comments to show based on the showAllComments state
+  const commentsToShow = showAllComments
+    ? selectedPost.comments
+    : selectedPost.comments.slice(0, 2);
 
   return (
     <div className="PostDetails-container">
@@ -21,8 +71,8 @@ function PostDetails() {
           <p className="PostDetails-title">{selectedPost.title}</p>
           <div className="author-date-container">
             <img src={jenny} />
-            <p className="PostDetails-author"> {selectedPost.author}</p>
-            <p className="PostDetails-date">{selectedPost.date} </p>
+            <p className="PostDetails-author">{selectedPost.author}</p>
+            <p className="PostDetails-date">{selectedPost.date}</p>
           </div>
           <p className="PostDetails-text">{selectedPost.text}</p>
 
@@ -49,9 +99,16 @@ function PostDetails() {
           <p className="LeaveComment">Leave a comment:</p>
 
           <div className="Comment-container">
-            <textarea className="textarea" placeholder="Comment..."></textarea>
+            <textarea
+              className="textarea"
+              placeholder="Comment..."
+              value={newComment}
+              onChange={handleCommentChange}
+            ></textarea>
             <div className="sendContainer">
-              <button className="sendBtn">Send</button>
+              <button className="sendBtn" onClick={addComment}>
+                Send
+              </button>
             </div>
           </div>
           <p className="line"></p>
@@ -59,10 +116,10 @@ function PostDetails() {
           <p className="Comments">Comments: </p>
         </div>
         <div className="Comment-List">
-          {selectedPost.comments.map((comment, index) => (
+          {commentsToShow.map((comment, index) => (
             <div className="EachComment" key={index}>
               <div className="unknown-pic">
-                <img src={unknownPic} />
+                <img src={unknownPic} alt="unknown" />
               </div>
               <div className="Comment-props">
                 <p className="comment-author">{comment.author}</p>
@@ -83,9 +140,19 @@ function PostDetails() {
               </div>
             </div>
           ))}
-        </div>
-        <div className="showMore-container">
-          <button className="showMore">Show more</button>
+          {selectedPost.comments.length > 2 && (
+            <div className="showMore-container">
+              {showAllComments ? (
+                <button className="showMore" onClick={handleShowLess}>
+                  Show less
+                </button>
+              ) : (
+                <button className="showMore" onClick={handleShowMore}>
+                  Show more
+                </button>
+              )}
+            </div>
+          )}
         </div>
       </div>
       <div className="PostImage-container">

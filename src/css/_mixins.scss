@@ -51,6 +51,12 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+@mixin cropped-displayed-2lines() {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 @mixin flex-align-justify-center() {
   display: flex;
   align-items: center;

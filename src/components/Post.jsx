@@ -15,12 +15,11 @@ const Post = ({
   date,
   author,
   likes,
-  isLiked,
   favoritePosts,
   setFavoritePosts,
 }) => {
   const { posts } = useContext(PostsContext);
-  const [isLike, setIsLiked] = useState(isLiked);
+  const [isLike, setIsLiked] = useState("");
   const [postLikes, setPostLikes] = useState(likes);
   const selectedPost = posts.find((post) => post.id === parseInt(id));
 
