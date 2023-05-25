@@ -12,7 +12,7 @@ function PostDetails() {
   const { posts, setPosts } = useContext(PostsContext);
   const { id } = useParams();
   const selectedPost = posts.find((post) => post.id === parseInt(id));
-  const [newComment, setNewComment] = useState("");
+  const [newComment, setNewComment] = useState([]);
   const [showAllComments, setShowAllComments] = useState(false);
 
   // Function to handle adding a new comment to a post
@@ -92,7 +92,7 @@ function PostDetails() {
                   alt="heart-logo-solid"
                 />
               </button>
-              <p className="Cards-likes">{selectedPost.likes}k</p>
+              <p className="Cards-likes">{selectedPost.likes}</p>
             </div>
           </div>
 

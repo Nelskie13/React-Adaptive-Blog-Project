@@ -39,6 +39,7 @@ function App() {
         </Route>
         <Route path="/" element={<Outlet />}>
           <Route path="Addpost" element={<NewPostForm />} />
+          <Route path="/Allpost" element={<PostDetails />} />
         </Route>
       </Route>
     )

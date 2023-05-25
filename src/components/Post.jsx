@@ -86,7 +86,7 @@ const Post = ({
                 )}
               </button>
             </div>
-            <p className="Cards-likes">{postLikes}k</p>
+            <p className="Cards-likes">{postLikes}</p>
           </div>
         </div>
       </div>
