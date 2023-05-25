@@ -56,7 +56,7 @@ function NewPostForm() {
         ></textarea>
 
         <div className="PostBtn-container">
-          <NavLink to="/Allpost" className="PostBtn" onClick={handlePost}>
+          <NavLink className="PostBtn" to="/Allpost" onClick={handlePost}>
             Post
           </NavLink>
         </div>

@@ -403,7 +403,6 @@
   @include mixins.addtext-textarea-props();
 }
 .PostBtn {
-  text-decoration: none;
   @include mixins.postbtn-props();
   &:hover {
     background: #0266ff;

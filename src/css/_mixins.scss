@@ -156,15 +156,18 @@
   box-sizing: border-box;
 }
 @mixin postbtn-props() {
-  border-radius: 6px;
   width: 140px;
   height: 50px;
-  padding: 13px 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #c0bfcf;
-  border: none;
-  font-family: "Inter";
-  font-size: 16px;
+  border-radius: 6px;
   color: #ffffff;
+  text-decoration: none;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 16px;
 }
 @mixin media-query-mobile-props() {
   .navbar-container {
@@ -316,7 +319,7 @@
     display: flex;
     align-items: end;
     width: 320px;
-    height: 920px;
+    height: 930px;
     .NewPost-container {
       .NewPost-title {
         font-size: 28px;
