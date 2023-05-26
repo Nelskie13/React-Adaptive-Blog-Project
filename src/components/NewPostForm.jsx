@@ -8,6 +8,7 @@ function NewPostForm() {
   const { posts, setPosts } = useContext(PostsContext);
   const [title, setTitle] = useState([]);
   const [text, setText] = useState([]);
+  const [imageURL, setImageURL] = useState([]); // Added state for image URL
 
   const handleTitleChange = (event) => {
     setTitle(event.target.value);
@@ -24,6 +25,7 @@ function NewPostForm() {
       text: text,
       comments: [],
       likes: 0,
+      imageURL: imageURL, // Include the imageURL in the new post object
     };
 
     setPosts([...posts, newPost]);
@@ -31,6 +33,12 @@ function NewPostForm() {
     // Clear the input fields after posting
     setTitle([]);
     setText([]);
+    setImageURL([]); // Reset the imageURL state
+  };
+
+  // Update the imageURL state with the uploaded image URL
+  const addImageSuccess = (imageURL) => {
+    setImageURL(imageURL);
   };
 
   return (
@@ -62,7 +70,7 @@ function NewPostForm() {
         </div>
       </div>
       <div className="ImageUploader-container">
-        <PostImage />
+        <PostImage addImageSuccessful={addImageSuccess} />
       </div>
     </div>
   );

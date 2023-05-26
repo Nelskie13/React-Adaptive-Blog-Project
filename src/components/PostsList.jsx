@@ -21,7 +21,8 @@ export const PostsList = () => {
           isLiked={post.isLiked}
           favoritePosts={favoritePosts}
           setFavoritePosts={setFavoritePosts}
-        />
+          imageURL={post.imageURL}
+        ></Post>
       ))}
     </div>
   );

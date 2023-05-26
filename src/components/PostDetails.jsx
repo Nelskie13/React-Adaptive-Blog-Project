@@ -156,7 +156,11 @@ function PostDetails() {
         </div>
       </div>
       <div className="PostImage-container">
-        <Images className="PostDetail-img" id={selectedPost.id} />
+        <Images
+          className="PostDetail-img"
+          id={selectedPost.id}
+          imageURL={selectedPost.imageURL}
+        />
       </div>
     </div>
   );

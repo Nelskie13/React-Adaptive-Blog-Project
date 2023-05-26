@@ -20,30 +20,34 @@ import picture18 from "../assets/Pictures/Image-17.jpg";
 import picture19 from "../assets/Pictures/Image-18.jpg";
 import picture20 from "../assets/Pictures/Image-19.jpg";
 
-const images = {
-  1: picture1,
-  2: picture2,
-  3: picture3,
-  4: picture4,
-  5: picture5,
-  6: picture6,
-  7: picture7,
-  8: picture8,
-  9: picture9,
-  10: picture10,
-  11: picture11,
-  12: picture12,
-  13: picture13,
-  14: picture14,
-  15: picture15,
-  16: picture16,
-  17: picture17,
-  18: picture18,
-  19: picture19,
-  20: picture20,
-};
-
-function Images({ id, className }) {
+function Images({ id, className, imageURL }) {
+  const images = {
+    1: picture1,
+    2: picture2,
+    3: picture3,
+    4: picture4,
+    5: picture5,
+    6: picture6,
+    7: picture7,
+    8: picture8,
+    9: picture9,
+    10: picture10,
+    11: picture11,
+    12: picture12,
+    13: picture13,
+    14: picture14,
+    15: picture15,
+    16: picture16,
+    17: picture17,
+    18: picture18,
+    19: picture19,
+    20: picture20,
+    21: imageURL,
+    22: imageURL,
+    23: imageURL,
+    24: imageURL,
+    25: imageURL,
+  };
   const image = useMemo(() => images[id], [id]);
   return <img className={`Cards-image ${className}`} src={image} alt="image" />;
 }

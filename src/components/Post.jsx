@@ -17,6 +17,7 @@ const Post = ({
   likes,
   favoritePosts,
   setFavoritePosts,
+  imageURL,
 }) => {
   const { posts } = useContext(PostsContext);
   const [isLike, setIsLiked] = useState("");
@@ -48,10 +49,11 @@ const Post = ({
     handleLike();
     favoriteHandler();
   };
+
   return (
     <div className="cards-container">
       <div className="Cards-details">
-        <Images id={id} />
+        <Images id={id} imageURL={imageURL} />
         <div className="Text-Props">
           <p className="Cards-title">{title}</p>
           <p className="Cards-text">{text}</p>
