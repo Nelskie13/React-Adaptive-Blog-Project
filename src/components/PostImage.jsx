@@ -11,6 +11,8 @@ export const PostImage = ({ addImageSuccessful }) => {
   const [image, setImage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+  const [isHidden, setIsHidden] = useState(false);
+
   const handleImageUpload = async (e) => {
     try {
       const { fileUrl } = await uploadImage.uploadFile(e.target.files[0], {
@@ -19,6 +21,7 @@ export const PostImage = ({ addImageSuccessful }) => {
       imageInput.current.value = "";
       setImage(fileUrl);
       addImageSuccessful(fileUrl);
+      setIsHidden(true);
     } catch (e) {
       console.warn(`Error: ${e}`);
     }
@@ -29,19 +32,30 @@ export const PostImage = ({ addImageSuccessful }) => {
     console.log(`File uploading: ${progress}% complete.`);
   };
 
+  const mouseOverHandler = () => {
+    setIsHidden(false);
+  };
+
+  const mouseOutHandler = () => {
+    setIsHidden(true);
+  };
+
   return (
     <div
       className="image-uploader"
+      onMouseOver={mouseOverHandler}
+      onMouseOut={mouseOutHandler}
       style={{
         backgroundImage: image ? `url(${image})` : "#f8f9fc",
         backgroundSize: "cover",
+        opacity: isHidden ? "1" : "0.5",
       }}
     >
       {isLoading ? <LoadingSpinner /> : ""}
       <label
         className="image-button"
         style={{
-          display: image ? "none" : "block",
+          display: isHidden ? "none" : "block",
         }}
       >
         <input
@@ -50,7 +64,7 @@ export const PostImage = ({ addImageSuccessful }) => {
           onChange={handleImageUpload}
           ref={imageInput}
         />
-        + Add Image
+        {isHidden ? "+ Add image" : "+ Add new image"}
       </label>
     </div>
   );
