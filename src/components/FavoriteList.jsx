@@ -50,6 +50,7 @@ function FavoriteList() {
             isLiked={post.isLiked}
             favoritePosts={post.favoritePosts}
             setFavoritePosts={post.setFavoritePosts}
+            imageURL={post.imageURL}
           />
         ))
       ) : (
