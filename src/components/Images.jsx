@@ -21,6 +21,7 @@ import picture19 from "../assets/Pictures/Image-18.jpg";
 import picture20 from "../assets/Pictures/Image-19.jpg";
 
 function Images({ id, className, imageURL }) {
+  // Define an object that maps image IDs to corresponding image URLs
   const images = {
     1: picture1,
     2: picture2,
@@ -48,7 +49,9 @@ function Images({ id, className, imageURL }) {
     24: imageURL,
     25: imageURL,
   };
+  // Use the useMemo hook to memoize the selected image based on the provided ID
   const image = useMemo(() => images[id], [id]);
+  // Render the image element with the selected image and provided className
   return <img className={`Cards-image ${className}`} src={image} alt="image" />;
 }
 

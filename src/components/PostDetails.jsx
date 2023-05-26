@@ -17,7 +17,10 @@ function PostDetails() {
 
   // Function to handle adding a new comment to a post
   const addComment = () => {
+    // Get the current date
     const currentDate = new Date();
+
+    // Format the current date as a string in the desired format
     const formattedDate = currentDate.toLocaleDateString("en-US", {
       month: "long",
       day: "numeric",
@@ -25,7 +28,9 @@ function PostDetails() {
     });
 
     const updatedPosts = posts.map((post) => {
+      // Check if the current post's id matches the provided id
       if (post.id === parseInt(id)) {
+        // Create a new array of comments with the updated comment included
         const updatedComments = [
           ...post.comments,
           {
@@ -34,12 +39,15 @@ function PostDetails() {
             date: formattedDate,
           },
         ];
+        // Return a new object with the updated comments array for the matched post
         return { ...post, comments: updatedComments };
       }
+      // If the current post's id does not match, return it as is
       return post;
     });
-
+    // Update the state variable 'posts' with the updated array of posts
     setPosts(updatedPosts);
+    // Clear the 'newComment' state variable
     setNewComment("");
   };
 

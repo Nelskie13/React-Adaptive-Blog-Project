@@ -10,6 +10,8 @@ export const PostImage = ({ addImageSuccessful }) => {
   const imageInput = useRef();
   const [image, setImage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
+  // State variable to track whether an element is hidden or not
   const [isHidden, setIsHidden] = useState(false);
 
   const handleImageUpload = async (e) => {
@@ -32,10 +34,12 @@ export const PostImage = ({ addImageSuccessful }) => {
   };
 
   const mouseOverHandler = () => {
+    // Set the state variable 'isHidden' to false when the mouse is over the element
     setIsHidden(false);
   };
 
   const mouseOutHandler = () => {
+    // Set the state variable 'isHidden' to true when the mouse leaves the element
     setIsHidden(true);
   };
 

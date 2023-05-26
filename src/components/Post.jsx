@@ -21,12 +21,18 @@ const Post = ({
   setFavoritePosts,
   imageURL,
 }) => {
+  // Access the 'posts' data from the context using the useContext hook
   const { posts } = useContext(PostsContext);
+
+  // State variables to track if the post is liked, number of post likes,
+  // whether the comment section is being hovered, and whether the heart icon is being hovered
   const [isLike, setIsLiked] = useState("");
   const [postLikes, setPostLikes] = useState(likes);
-  const selectedPost = posts.find((post) => post.id === parseInt(id));
   const [hoverComment, setHoverComment] = useState(false);
   const [hoverHeart, setHoverHeart] = useState(false);
+
+  // Find the selected post from the 'posts' array based on the provided 'id'
+  const selectedPost = posts.find((post) => post.id === parseInt(id));
 
   // Function to handle favoriting/unfavoriting a post
   const favoriteHandler = () => {
@@ -55,18 +61,22 @@ const Post = ({
   };
 
   const mouseOverCommentHandler = () => {
+    // Set the state variable 'hoverComment' to true when mouse is over a comment
     setHoverComment(true);
   };
 
   const mouseOutCommentHandler = () => {
+    // Set the state variable 'hoverComment' to false when mouse leaves a comment
     setHoverComment(false);
   };
 
   const mouseOverHeartHandler = () => {
+    // Set the state variable 'hoverHeart' to true when mouse is over the heart icon
     setHoverHeart(true);
   };
 
   const mouseOutHeartHandler = () => {
+    // Set the state variable 'hoverHeart' to false when mouse leaves the heart icon
     setHoverHeart(false);
   };
 

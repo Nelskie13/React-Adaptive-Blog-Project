@@ -4,6 +4,7 @@ import Post from "./Post";
 import { PostsContext } from "./PostsContext";
 
 function FavoriteList() {
+  // Access the 'posts', 'favoritePosts', and 'setFavoritePosts' from the context using the useContext hook
   const { posts, favoritePosts, setFavoritePosts } = useContext(PostsContext);
   // Filter the postsData based on the favoritePosts array
   let favoritePost = posts.filter((post) => {
@@ -22,6 +23,7 @@ function FavoriteList() {
     // Retrieve favorite posts from local storage when the component mounts
     const storedFavoritePosts = localStorage.getItem("favoritePosts");
     if (storedFavoritePosts) {
+      // Set the 'favoritePosts' state by parsing the stored data from local storage
       setFavoritePosts(JSON.parse(storedFavoritePosts));
     }
   }, []);

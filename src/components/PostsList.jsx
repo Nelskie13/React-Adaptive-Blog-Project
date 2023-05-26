@@ -5,6 +5,7 @@ import Post from "./Post";
 
 // Export PostsList component
 export const PostsList = () => {
+  // Extract the 'posts', 'favoritePosts', and 'setFavoritePosts' properties from the object returned by useContext(PostsContext)
   const { posts, favoritePosts, setFavoritePosts } = useContext(PostsContext);
   return (
     <div className="posts-container">
