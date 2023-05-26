@@ -1,8 +1,10 @@
 // Import images
 import React, { useContext } from "react";
 import commentLogo from "../assets/comment.svg";
+import commentOutline from "../assets/commentOutline.svg";
 import heartLogo from "../assets/heart.svg";
 import heartSolid from "../assets/heartSolid.svg";
+import heartOutline from "../assets/heartOutline.svg";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Images from "./Images";
@@ -23,6 +25,8 @@ const Post = ({
   const [isLike, setIsLiked] = useState("");
   const [postLikes, setPostLikes] = useState(likes);
   const selectedPost = posts.find((post) => post.id === parseInt(id));
+  const [hoverComment, setHoverComment] = useState(false);
+  const [hoverHeart, setHoverHeart] = useState(false);
 
   // Function to handle favoriting/unfavoriting a post
   const favoriteHandler = () => {
@@ -40,7 +44,7 @@ const Post = ({
 
   // Function to handle toggling the like state of a post
   const handleLike = () => {
-    setPostLikes((prevLikes) => (isLike ? prevLikes - 1 : prevLikes + 1));
+    setPostLikes(postLikes + 1);
     setIsLiked(!isLike);
   };
 
@@ -50,27 +54,66 @@ const Post = ({
     favoriteHandler();
   };
 
+  const mouseOverCommentHandler = () => {
+    setHoverComment(true);
+  };
+
+  const mouseOutCommentHandler = () => {
+    setHoverComment(false);
+  };
+
+  const mouseOverHeartHandler = () => {
+    setHoverHeart(true);
+  };
+
+  const mouseOutHeartHandler = () => {
+    setHoverHeart(false);
+  };
+
   return (
     <div className="cards-container">
       <div className="Cards-details">
         <Images id={id} imageURL={imageURL} />
         <div className="Text-Props">
-          <p className="Cards-title">{title}</p>
+          <NavLink className="title-post-props" to={`/Allpost/${id}`} key={id}>
+            <p className="Cards-title">{title}</p>
+          </NavLink>
           <p className="Cards-text">{text}</p>
           <div className="likes-author-container">
             <p className="Cards-date">{date} </p>
             <p className="Cards-dot"> • </p>
             <p className="Cards-author"> {author}</p>
             <NavLink to={`/Allpost/${id}`} key={id}>
-              <div className="comment">
+              <div
+                className="comment"
+                onMouseOver={mouseOverCommentHandler}
+                onMouseOut={mouseOutCommentHandler}
+              >
                 <button className="commentBtn">
-                  <img src={commentLogo} alt="comment-logo" />
+                  {hoverComment ? (
+                    <img
+                      className="commentBtnLogo"
+                      src={commentOutline}
+                      alt="comment-logo"
+                    />
+                  ) : (
+                    <img
+                      className="commentBtnLogo"
+                      src={commentLogo}
+                      alt="comment-logo"
+                    />
+                  )}
                 </button>
               </div>
             </NavLink>
             <p className="Cards-comment">{selectedPost.comments.length}</p>
             <div className="heart">
-              <button className="heartBtn" onClick={toggleLike}>
+              <button
+                className="heartBtn"
+                onClick={toggleLike}
+                onMouseOver={mouseOverHeartHandler}
+                onMouseOut={mouseOutHeartHandler}
+              >
                 {isLike ? (
                   <img
                     className="heartSolid"
@@ -79,11 +122,19 @@ const Post = ({
                   />
                 ) : (
                   <>
-                    <img
-                      className="heartLogo"
-                      src={heartLogo}
-                      alt="heart-logo"
-                    />
+                    {hoverHeart ? (
+                      <img
+                        className="heartOutline"
+                        src={heartOutline}
+                        alt="heart-logo-outline"
+                      />
+                    ) : (
+                      <img
+                        className="heartLogo"
+                        src={heartLogo}
+                        alt="heart-logo"
+                      />
+                    )}
                   </>
                 )}
               </button>

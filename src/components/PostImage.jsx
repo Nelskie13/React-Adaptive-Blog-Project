@@ -10,7 +10,6 @@ export const PostImage = ({ addImageSuccessful }) => {
   const imageInput = useRef();
   const [image, setImage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-
   const [isHidden, setIsHidden] = useState(false);
 
   const handleImageUpload = async (e) => {
@@ -64,7 +63,7 @@ export const PostImage = ({ addImageSuccessful }) => {
           onChange={handleImageUpload}
           ref={imageInput}
         />
-        {isHidden ? "+ Add image" : "+ Add new image"}
+        {isHidden}+ Add image
       </label>
     </div>
   );
