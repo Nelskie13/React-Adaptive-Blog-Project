@@ -12,11 +12,18 @@ function PostDetails() {
   const { posts, setPosts } = useContext(PostsContext);
   const { id } = useParams();
   const selectedPost = posts.find((post) => post.id === parseInt(id));
-  const [newComment, setNewComment] = useState([]);
+  const [newComment, setNewComment] = useState("");
   const [showAllComments, setShowAllComments] = useState(false);
+  const [commentError, setCommentError] = useState(false);
 
   // Function to handle adding a new comment to a post
   const addComment = () => {
+    // Validate if the textarea is not empty
+    if (!newComment.trim()) {
+      setCommentError(true);
+      return;
+    }
+
     // Get the current date
     const currentDate = new Date();
 
@@ -49,11 +56,15 @@ function PostDetails() {
     setPosts(updatedPosts);
     // Clear the 'newComment' state variable
     setNewComment("");
+    // Reset the comment error state
+    setCommentError(false);
   };
 
   // Function to handle input change in the comment textarea
   const handleCommentChange = (event) => {
     setNewComment(event.target.value);
+    // Reset the comment error state when the user starts typing
+    setCommentError(false);
   };
 
   // Function to handle "Show more" button click
@@ -108,11 +119,15 @@ function PostDetails() {
 
           <div className="Comment-container">
             <textarea
-              className="textarea"
+              className={`textarea ${commentError ? "error" : ""}`}
               placeholder="Comment..."
               value={newComment}
               onChange={handleCommentChange}
+              required
             ></textarea>
+            {commentError && (
+              <p className="comment-error">Please enter a comment.</p>
+            )}
             <div className="sendContainer">
               <button className="sendBtn" onClick={addComment}>
                 Send

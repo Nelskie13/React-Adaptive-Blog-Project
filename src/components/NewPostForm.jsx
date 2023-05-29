@@ -9,9 +9,10 @@ function NewPostForm() {
   const { posts, setPosts } = useContext(PostsContext);
 
   // State variables to track the title, text, and image URL of the new post
-  const [title, setTitle] = useState([]);
-  const [text, setText] = useState([]);
-  const [imageURL, setImageURL] = useState([]); // Added state for image URL
+  const [title, setTitle] = useState("");
+  const [text, setText] = useState("");
+  const [imageURL, setImageURL] = useState(""); // Added state for image URL
+  const [errorMessage, setErrorMessage] = useState(""); // Added state for error message
 
   // Event handler for title input change
   const handleTitleChange = (event) => {
@@ -24,6 +25,12 @@ function NewPostForm() {
   };
 
   const handlePost = () => {
+    // Check if the title and text are empty
+    if (title.trim() === "" || text.trim() === "") {
+      setErrorMessage("Please fill in the title and text fields.");
+      return; // Stop execution if the fields are empty
+    }
+
     // Create a new post object with the provided title, text, comments, likes, and imageURL
     const newPost = {
       id: posts.length + 1,
@@ -38,9 +45,10 @@ function NewPostForm() {
     setPosts([...posts, newPost]);
 
     // Clear the input fields after posting
-    setTitle([]);
-    setText([]);
-    setImageURL([]); // Reset the imageURL state
+    setTitle("");
+    setText("");
+    setImageURL(""); // Reset the imageURL state
+    setErrorMessage(""); // Reset the error message state
   };
 
   // Update the imageURL state with the uploaded image URL
@@ -70,8 +78,14 @@ function NewPostForm() {
           onChange={handleTextChange}
         ></textarea>
 
+        {errorMessage && <p className="comment-error">{errorMessage}</p>}
+
         <div className="PostBtn-container">
-          <NavLink className="PostBtn" to="/Allpost" onClick={handlePost}>
+          <NavLink
+            className="PostBtn"
+            to={title.trim() !== "" && text.trim() !== "" ? "/Allpost" : ""}
+            onClick={handlePost}
+          >
             Post
           </NavLink>
         </div>
