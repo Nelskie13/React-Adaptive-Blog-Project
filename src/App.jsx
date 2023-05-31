@@ -35,11 +35,9 @@ function App() {
         </Route>
         <Route path="/" element={<Outlet />}>
           <Route path="/Allpost/:id" element={<PostDetails />} />
-          <Route path="/Allpost" element={<BlogReturn />} />
         </Route>
         <Route path="/" element={<Outlet />}>
           <Route path="Addpost" element={<NewPostForm />} />
-          <Route path="/Allpost" element={<PostDetails />} />
         </Route>
       </Route>
     )
