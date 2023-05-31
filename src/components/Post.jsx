@@ -10,19 +10,9 @@ import { NavLink } from "react-router-dom";
 import Images from "./Images";
 import { PostsContext } from "../components/PostsContext";
 
-const Post = ({
-  id,
-  title,
-  text,
-  date,
-  author,
-  likes,
-  favoritePosts,
-  setFavoritePosts,
-  imageURL,
-}) => {
+const Post = ({ id, title, text, date, author, likes, imageURL }) => {
   // Access the 'posts' data from the context using the useContext hook
-  const { posts } = useContext(PostsContext);
+  const { posts, favoritePosts, setFavoritePosts } = useContext(PostsContext);
 
   // State variables to track if the post is liked, number of post likes,
   // whether the comment section is being hovered, and whether the heart icon is being hovered

@@ -45,13 +45,9 @@ function FavoriteList() {
             id={post.id}
             title={post.title}
             text={post.text}
-            author={post.author}
             date={post.date}
-            comment={post.comment}
+            author={post.author}
             likes={post.likes}
-            isLiked={post.isLiked}
-            favoritePosts={post.favoritePosts}
-            setFavoritePosts={post.setFavoritePosts}
             imageURL={post.imageURL}
           />
         ))

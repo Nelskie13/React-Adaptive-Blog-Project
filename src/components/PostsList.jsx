@@ -19,9 +19,6 @@ export const PostsList = () => {
           author={post.author}
           date={post.date}
           likes={post.likes}
-          isLiked={post.isLiked}
-          favoritePosts={favoritePosts}
-          setFavoritePosts={setFavoritePosts}
           imageURL={post.imageURL}
         ></Post>
       ))}
