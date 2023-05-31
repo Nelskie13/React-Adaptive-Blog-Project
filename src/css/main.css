@@ -840,4 +840,9 @@
     font-family: "Inter";
     padding: 10px 20px 10px 20px;
   }
+  .NoFavorite {
+    grid-column: 1/2;
+    display: flex;
+    justify-content: center;
+  }
 }/*# sourceMappingURL=main.css.map */
